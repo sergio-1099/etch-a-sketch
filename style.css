@@ -14,3 +14,7 @@ body {
     background-color: steelblue;
     border: skyblue 1px solid;
 }
+
+.color-div {
+    background-color: black;
+}
