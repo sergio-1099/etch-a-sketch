@@ -4,9 +4,11 @@ function createGrid (squares) {
     for (let i = 1; i <= numberOfDivs; i++) {
         newDiv[i] = document.createElement('div');
         newDiv[i].classList.add(`div${i}`);
-        newDiv[i].classList.add('gridSquares');
+        newDiv[i].classList.add('grid-squares');
         document.querySelector('.grid-container').appendChild(newDiv[i]);
     }
+    document.querySelector('.grid-container').style.cssText += (`grid-template-columns: repeat(${squares}, 1fr);`);
+    document.querySelector('.grid-container').style.cssText += (`grid-template-rows: repeat(${squares}, 1fr);`);
 }
 
-createGrid(16);
+createGrid(10);
