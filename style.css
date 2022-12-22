@@ -29,6 +29,7 @@ body {
 
 .header {
     font-family: 'Open Sans', sans-serif;
+    margin-bottom: 2rem;
     font-size: 50px;
     color: #000;
     font-weight: bold;
@@ -56,4 +57,49 @@ body {
     flex-direction: column;
     padding: 20px 0;
     gap: 20px;
+}
+
+.color-picker {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 5px;
+    justify-items: center;
+}
+
+.color {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+}
+
+.default {
+    background-color: #eae7dc;
+}
+
+.black {
+    background-color: black;
+}
+
+.red {
+    background-color: red;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.green {
+    background-color: green;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.purple {
+    background-color: purple;
 }
