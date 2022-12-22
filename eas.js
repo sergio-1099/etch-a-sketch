@@ -18,6 +18,8 @@ let gridWidth = 16;
 createGrid(gridWidth);
 
 const changeGridButton = document.querySelector('.grid-size');
+const resetButton = document.querySelector('.reset');
+let resetDivs = document.querySelectorAll('.grid-squares');
 
 changeGridButton.addEventListener('click', () => {
     let gridDivs = document.querySelectorAll('.grid-squares');
@@ -30,4 +32,10 @@ changeGridButton.addEventListener('click', () => {
         gridWidth = prompt("Too high! Try again:");
     }
     createGrid(gridWidth);
-})
+});
+
+resetButton.addEventListener('click', () => {
+    for (let i = 0; i < resetDivs.length; i++) {
+        resetDivs[i].classList.remove('color-div');
+    }
+});
