@@ -28,6 +28,11 @@ function randomColors() {
     return cssString;
 }
 
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    this.classList.remove('toggle-animation');
+}
+
 let gridWidth = 16;
 let rainbow = false;
 
@@ -36,6 +41,9 @@ const resetButton = document.querySelector('.reset');
 const rainbowButton = document.querySelector('.rainbow');
 
 changeGridButton.addEventListener('click', () => {
+    changeGridButton.classList.add('toggle-animation');
+    changeGridButton.addEventListener('transitionend', removeTransition);
+
     let gridDivs = document.querySelectorAll('.grid-squares');
 
     for (let i = 0; i < gridWidth*gridWidth; i++) {
@@ -49,6 +57,8 @@ changeGridButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
+    resetButton.classList.add('toggle-animation');
+    resetButton.addEventListener('transitionend', removeTransition);
     let resetDivs = document.querySelectorAll('.grid-squares');
 
     for (let i = 0; i < resetDivs.length; i++) {
@@ -58,6 +68,8 @@ resetButton.addEventListener('click', () => {
 });
 
 rainbowButton.addEventListener('click', () => {
+    rainbowButton.classList.add('toggle-animation');
+    rainbowButton.addEventListener('transitionend', removeTransition);
     if (rainbow == true) {
         rainbow = false;
         rainbowButton.style.cssText = '';
