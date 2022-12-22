@@ -119,3 +119,16 @@ body {
     background-color: purple;
     color: purple;
 }
+
+.eraser {
+    background-color: #8e8d8a;
+    grid-column: 1/3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.eraser > img {
+    height: 37px;
+    width: 37px;
+}
