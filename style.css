@@ -6,10 +6,16 @@ body {
     padding: 1rem;
 }
 
+.grid-and-controls {
+    display: flex;
+    gap: 20px;
+}
+
 .grid-container {
     width: 960px;
-    height: 100vh;
+    height: 80vh;
     display: grid;
+    flex: 0 1 auto;
 }
 
 .grid-squares {
@@ -29,6 +35,15 @@ body {
 }
 
 .grid-size, .reset {
-    font-size: 25px;
+    font-size: 15px;
+    padding: 10px 0;
+    width: 150px;
     border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    gap: 20px;
 }
