@@ -1,8 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: 0 20%;
+    background: #d8c3a5;
+    padding: 1rem;
 }
 
 .grid-container {
@@ -12,10 +13,22 @@ body {
 }
 
 .grid-squares {
-    background-color: steelblue;
-    border: skyblue 1px solid;
+    background-color: #8e8d8a;
+    border: #000 1px solid;
 }
 
 .color-div {
-    background-color: black;
+    background-color: #eae7dc;
+}
+
+.header {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 50px;
+    color: #000;
+    font-weight: bold;
+}
+
+.grid-size, .reset {
+    font-size: 25px;
+    border-radius: 10px;
 }
