@@ -60,11 +60,12 @@ resetButton.addEventListener('click', () => {
 rainbowButton.addEventListener('click', () => {
     if (rainbow == true) {
         rainbow = false;
+        rainbowButton.style.cssText = '';
     }
     else {
         rainbow = true;
+        rainbowButton.style.cssText = `background-color: rgb(${randomColors()})`;
     }
-    console.log(rainbow);
 });
 
 createGrid(gridWidth);
