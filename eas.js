@@ -8,10 +8,10 @@ function createGrid (squares) {
         document.querySelector('.grid-container').appendChild(newDiv[i]);
         newDiv[i].addEventListener('mouseover', () => {
             if (rainbow == false) {
-                newDiv[i].classList.add('color-div');
+                newDiv[i].style.cssText = (`background-color: ${whichColor};`);
             }
             else if (rainbow == true) {
-                newDiv[i].style.cssText += (`background-color: rgb(${randomColors()});`); 
+                newDiv[i].style.cssText = (`background-color: rgb(${randomColors()});`); 
             }
         });
     }
@@ -39,6 +39,8 @@ let rainbow = false;
 const changeGridButton = document.querySelector('.grid-size');
 const resetButton = document.querySelector('.reset');
 const rainbowButton = document.querySelector('.rainbow');
+const colors = document.querySelectorAll('.color');
+let whichColor = '#eae7dc';
 
 changeGridButton.addEventListener('click', () => {
     changeGridButton.classList.add('toggle-animation');
@@ -79,5 +81,14 @@ rainbowButton.addEventListener('click', () => {
         rainbowButton.style.cssText = `background-color: rgb(${randomColors()})`;
     }
 });
+
+for (let i = 0; i < colors.length; i++) {
+    colors[i].addEventListener('click', () => {
+        colors[i].classList.add('toggle-animation');
+        colors[i].addEventListener('transitionend', removeTransition);
+
+        whichColor = colors[i].textContent;
+    });
+}
 
 createGrid(gridWidth);
