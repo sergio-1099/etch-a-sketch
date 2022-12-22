@@ -34,7 +34,7 @@ body {
     font-weight: bold;
 }
 
-.grid-size, .reset {
+.grid-size, .reset, .rainbow {
     font-size: 15px;
     padding: 10px 0;
     width: 150px;
