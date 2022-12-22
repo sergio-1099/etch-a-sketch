@@ -19,7 +19,6 @@ createGrid(gridWidth);
 
 const changeGridButton = document.querySelector('.grid-size');
 const resetButton = document.querySelector('.reset');
-let resetDivs = document.querySelectorAll('.grid-squares');
 
 changeGridButton.addEventListener('click', () => {
     let gridDivs = document.querySelectorAll('.grid-squares');
@@ -35,6 +34,8 @@ changeGridButton.addEventListener('click', () => {
 });
 
 resetButton.addEventListener('click', () => {
+    let resetDivs = document.querySelectorAll('.grid-squares');
+
     for (let i = 0; i < resetDivs.length; i++) {
         resetDivs[i].classList.remove('color-div');
     }
