@@ -14,4 +14,17 @@ function createGrid (squares) {
     document.querySelector('.grid-container').style.cssText += (`grid-template-rows: repeat(${squares}, 1fr);`);
 }
 
-createGrid(10);
+let gridWidth = 16;
+createGrid(gridWidth);
+
+const changeGridButton = document.querySelector('.grid-size');
+
+changeGridButton.addEventListener('click', () => {
+    let gridDivs = document.querySelectorAll('.grid-squares');
+    
+    for (let i = 0; i < gridWidth*gridWidth; i++) {
+        document.querySelector('.grid-container').removeChild(gridDivs[i]);
+    }
+    gridWidth = prompt("New grid size? Type a width!", "Size");
+    createGrid(gridWidth);
+})
