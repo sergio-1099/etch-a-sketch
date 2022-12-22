@@ -21,10 +21,13 @@ const changeGridButton = document.querySelector('.grid-size');
 
 changeGridButton.addEventListener('click', () => {
     let gridDivs = document.querySelectorAll('.grid-squares');
-    
+
     for (let i = 0; i < gridWidth*gridWidth; i++) {
         document.querySelector('.grid-container').removeChild(gridDivs[i]);
     }
     gridWidth = prompt("New grid size? Type a width!", "Size");
+    while (gridWidth > 100) {
+        gridWidth = prompt("Too high! Try again:");
+    }
     createGrid(gridWidth);
 })
